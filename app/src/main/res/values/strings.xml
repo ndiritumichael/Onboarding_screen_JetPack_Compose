@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Onboarding Screeen</string>
+    <string name="title1">Order Your Food</string>
+    <string name="text1">Now you can order food anytime \n from your mobile</string>
+    <string name="title2">Cooking Safe Food</string>
+    <string name="text2">We maintain High Standards \n in Cleanliness and Safety</string>
+    <string name="title3">Quick Delivery</string>
+    <string name="text3">Get Your Favorite Meals \n on Time and good condition</string>
+
+
 </resources>

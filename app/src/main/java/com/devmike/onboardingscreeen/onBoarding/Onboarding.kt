@@ -108,7 +108,8 @@ onNextClicked : ()-> Unit) {
         modifier = Modifier.align(Alignment.CenterEnd),
         backgroundColor = MaterialTheme.colors.primary,
         contentColor = MaterialTheme.colors.onPrimary) {
-            Icon(Icons.Outlined.KeyboardArrowRight, contentDescription = "next")
+            Text(text = "Next")
+        //  Icon(Icons.Outlined.KeyboardArrowRight, contentDescription = "next")
 
         }
 

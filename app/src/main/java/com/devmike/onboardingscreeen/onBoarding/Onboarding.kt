@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import com.devmike.onboardingscreeen.R
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
 
@@ -46,22 +47,36 @@ val scope = rememberCoroutineScope()
             OnBoardingItem(items[page])
 
         }
-        BottomSection(size = items.size, index = statePager.currentPage) {
-            if (statePager.currentPage +1 <items.size) {
+Row(modifier = Modifier.fillMaxWidth(),
+horizontalArrangement = Arrangement.SpaceBetween) {
 
-             scope.launch {
-                 statePager.scrollToPage(statePager.currentPage+1)
-             }
+    HorizontalPagerIndicator(pagerState = statePager
+        ,
+        modifier = Modifier
+            .padding(16.dp)
+            .align(Alignment.CenterVertically))
 
 
+    BottomSection(size = items.size, index = statePager.currentPage) {
+        if (statePager.currentPage +1 <items.size) {
 
+            scope.launch {
+                statePager.scrollToPage(statePager.currentPage+1)
             }
+
+
 
         }
 
     }
+
+}
+
+    }
     
 }
+
+
 
 @Composable
 @Preview
@@ -88,6 +103,7 @@ fun TopSection(){
     
 }
 
+@ExperimentalPagerApi
 @Composable
 
 fun BottomSection(size:Int,
@@ -95,11 +111,12 @@ fun BottomSection(size:Int,
 onNextClicked : ()-> Unit) {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
+          //  .fillMaxWidth()
             .padding(12.dp)
     ){
 //indicators
-        Indicators(size = size, index =index )
+        //Indicators(size = size, index =index )
+
 
 
 //next button

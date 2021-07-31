@@ -93,7 +93,7 @@ fun TopSection(){
         }
 
         //skip test button
-        TextButton(onClick = { /*TODO*/ },
+        TextButton(onClick = { /* implement main screen here*/ },
         modifier = Modifier.align(Alignment.CenterEnd)) {
             Text(text = "Skip",color = MaterialTheme.colors.onBackground)
         }

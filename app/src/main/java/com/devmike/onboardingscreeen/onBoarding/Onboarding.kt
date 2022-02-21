@@ -35,14 +35,15 @@ fun OnBoarding() {
     val scope = rememberCoroutineScope()
     Column(Modifier.fillMaxSize()) {
         val items = OnBoardingItem.get()
-        val statePager = rememberPagerState(items.size)
+        val statePager = rememberPagerState()
         TopSection()
         HorizontalPager(
             state = statePager,
             modifier = Modifier
                 .fillMaxSize()
-                .weight(0.8f)
-        , count = items.size) { page ->
+                .weight(0.8f),
+            count = items.size
+        ) { page ->
             OnBoardingItem(items[page])
         }
         Row(
@@ -80,7 +81,7 @@ fun TopSection() {
 
 // back button
         IconButton(
-            onClick = {  },
+            onClick = { },
             modifier = Modifier.align(Alignment.CenterStart)
         ) {
             Icon(Icons.Outlined.KeyboardArrowLeft, null)
@@ -109,7 +110,7 @@ fun BottomSection(
             //  .fillMaxWidth()
             .padding(12.dp)
     ) {
-        val buttontext = if (size == index+1) "start" else "next"
+        val buttontext = if (size == index + 1) "start" else "next"
 // indicators
         // Indicators(size = size, index =index )
 
